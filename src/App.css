@@ -1,0 +1,112 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F3F7F0;
+  color: white;
+  position: relative;
+}
+
+.navbar-logo a {
+  color: #F2545B;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+}
+
+.navbar-links ul {
+  display: flex;
+  gap: 20px;
+  list-style: none; /* Add this line to remove dots */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+
+.navbar-links li a {
+  color: #19323C;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar-links li a:hover {
+  /* text-decoration: underline; */
+  color: #F2545Bed
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, transform 0.4s;
+  }
+
+  .navbar-links.open ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #ec4899, #facc15, #8b5cf6, #ec4899);
+  background-size: 400%;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation 30s ease infinite;
+}
+
+.heading {
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 120px;
+  text-align: center;
+}
+
